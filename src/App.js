@@ -3,7 +3,7 @@ import './App.css';
 import Header from './MyComponents/Header';
 import { Footer } from './MyComponents/Footer';
 import { Todos } from './MyComponents/Todos';
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const initialTodos = [
     {

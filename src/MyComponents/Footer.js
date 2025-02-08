@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'; // Create this CSS file
+import './Footer.css';
 
 export const Footer = () => {
     return (
@@ -22,13 +22,27 @@ export const Footer = () => {
                     <div className="col-md-3">
                         <h5>Connect With Us</h5>
                         <div className="social-links">
-                            <a href="https://www.linkedin.com/in/nitish-kumar-singh-0b261a225/" className="btn btn-outline-light btn-sm m-1">
-                                <i className="fab fa-twitter"></i>
+                            {/* LinkedIn */}
+                            <a href="https://www.linkedin.com/in/nitish-kumar-singh-0b261a225/"
+                                className="btn btn-outline-light btn-sm m-1"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <i className="fab fa-linkedin"></i>
                             </a>
-                            <a href="https://facebook.com" className="btn btn-outline-light btn-sm m-1">
+
+                            {/* Facebook */}
+                            <a href="https://facebook.com"
+                                className="btn btn-outline-light btn-sm m-1"
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <i className="fab fa-facebook"></i>
                             </a>
-                            <a href="https://github.com" className="btn btn-outline-light btn-sm m-1">
+
+                            {/* GitHub */}
+                            <a href="https://github.com"
+                                className="btn btn-outline-light btn-sm m-1"
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <i className="fab fa-github"></i>
                             </a>
                         </div>
