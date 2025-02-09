@@ -8,7 +8,7 @@ export const Footer = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <h5>My Todo App</h5>
-                        <p className="text-muted">Stay organized and boost your productivity.</p>
+                        <p className="text-muted">Stay organized and productive</p>
                     </div>
 
                     <div className="col-md-3">
@@ -20,29 +20,15 @@ export const Footer = () => {
                     </div>
 
                     <div className="col-md-3">
-                        <h5>Connect With Us</h5>
+                        <h5>Connect</h5>
                         <div className="social-links">
-                            {/* LinkedIn */}
-                            <a href="https://www.linkedin.com/in/nitish-kumar-singh-0b261a225/"
-                                className="btn btn-outline-light btn-sm m-1"
-                                target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com" className="btn btn-outline-light btn-sm m-1">
                                 <i className="fab fa-linkedin"></i>
                             </a>
-
-                            {/* Facebook */}
-                            <a href="https://facebook.com"
-                                className="btn btn-outline-light btn-sm m-1"
-                                target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://facebook.com" className="btn btn-outline-light btn-sm m-1">
                                 <i className="fab fa-facebook"></i>
                             </a>
-
-                            {/* GitHub */}
-                            <a href="https://github.com"
-                                className="btn btn-outline-light btn-sm m-1"
-                                target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="https://github.com" className="btn btn-outline-light btn-sm m-1">
                                 <i className="fab fa-github"></i>
                             </a>
                         </div>

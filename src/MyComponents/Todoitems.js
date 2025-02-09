@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const Todoitems = ({ todos, onDelete }) => {
+export const Todoitems = ({ todo, onDelete }) => {
     return (
         <div className="container my-3 p-3 border rounded">
-            <h5>{todos.title}</h5>
-            <p className="mb-3">{todos.desc}</p>
+            <h5>{todo.title}</h5>
+            <p className="mb-3">{todo.desc}</p>
             <button
                 className="btn btn-danger btn-sm"
-                onClick={() => onDelete(todos)}  // Changed to arrow function
+                onClick={() => onDelete(todo)}
             >
                 Delete
             </button>

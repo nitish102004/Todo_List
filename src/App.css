@@ -1,9 +1,54 @@
 /* Custom Styles */
-.container .border {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
+.min-vh-100 {
+  min-height: 100vh;
 }
 
-.btn-danger {
-  margin-top: 0.5rem;
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.main-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: #6c5ce7;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+.add-button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background: #5b4bc4;
+  transform: translateY(-2px);
+}
+
+.alert-info {
+  text-align: center;
+  margin-top: 2rem;
 }

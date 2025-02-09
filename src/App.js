@@ -1,26 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Header from './MyComponents/Header';
+import { Header } from './MyComponents/Header';
 import { Footer } from './MyComponents/Footer';
 import { Todos } from './MyComponents/Todos';
 import { AddTodo } from './MyComponents/AddTodo';
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      sno: 1,
-      title: "Go to the market",
-      desc: "You need to go to the market to get this job done"
-    },
-    {
-      sno: 2,
-      title: "Go to the mall",
-      desc: "You need to go to the mall to get this job done"
-    }
-  ]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
 
-  // Add new todo
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const addTodo = (title, desc) => {
     const newTodo = {
       sno: todos.length + 1,
@@ -30,22 +25,27 @@ function App() {
     setTodos([...todos, newTodo]);
   };
 
-  // Delete todo
   const onDelete = (todoToDelete) => {
     setTodos(todos.filter((todo) => todo.sno !== todoToDelete.sno));
   };
 
   return (
-    <>
+    <div className="d-flex flex-column min-vh-100">
       <Header title="My Todo List" searchBar={false} />
 
-      <div className="container my-4">
-        <AddTodo addTodo={addTodo} />
-        <Todos todos={todos} onDelete={onDelete} />
-      </div>
+      <main className="flex-grow-1 d-flex align-items-center">
+        <div className="container text-center">
+          <div className="row justify-content-center">
+            <div className="col-md-8 main-content">
+              <AddTodo addTodo={addTodo} />
+              <Todos todos={todos} onDelete={onDelete} />
+            </div>
+          </div>
+        </div>
+      </main>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,6 +1,5 @@
-// AddTodo.js
 import React, { useState } from 'react';
-import './AddTodo.css';
+import '../App.css';
 
 export const AddTodo = ({ addTodo }) => {
     const [title, setTitle] = useState("");
@@ -17,7 +16,8 @@ export const AddTodo = ({ addTodo }) => {
     };
 
     return (
-        <div className="add-todo-container">
+        <div className="add-todo-container text-center">
+            <h2 className="mb-4">Add a Task</h2>
             <div className="input-group">
                 <input
                     type="text"
@@ -31,13 +31,13 @@ export const AddTodo = ({ addTodo }) => {
                     placeholder="Task Description"
                     value={desc}
                     onChange={(e) => setDesc(e.target.value)}
+                    rows="3"
                 />
                 <button
-                    className="add-button"
+                    className="add-button mt-3"
                     onClick={handleAdd}
                 >
-                    <span className="plus-icon">+</span>
-                    Add Task
+                    + Add Task
                 </button>
             </div>
         </div>
