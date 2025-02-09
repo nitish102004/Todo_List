@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './MyComponents/Header';
 import { Footer } from './MyComponents/Footer';
 import { Todos } from './MyComponents/Todos';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { AddTodo } from './MyComponents/AddTodo';
+
 function App() {
-  const initialTodos = [
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Go to the market",
@@ -15,26 +17,33 @@ function App() {
       sno: 2,
       title: "Go to the mall",
       desc: "You need to go to the mall to get this job done"
-    },
-    {
-      sno: 3,
-      title: "Go to the Tapri",
-      desc: "You need to go to the Tapri to get this job done"
     }
-  ];
+  ]);
 
-  // State management for todos
-  const [todos, setTodos] = useState(initialTodos);
+  // Add new todo
+  const addTodo = (title, desc) => {
+    const newTodo = {
+      sno: todos.length + 1,
+      title: title,
+      desc: desc
+    };
+    setTodos([...todos, newTodo]);
+  };
 
+  // Delete todo
   const onDelete = (todoToDelete) => {
     setTodos(todos.filter((todo) => todo.sno !== todoToDelete.sno));
-    console.log("Deleted todo:", todoToDelete);
-  }
+  };
 
   return (
     <>
-      <Header title="My TodoS List" searchBar={false} />
-      <Todos todos={todos} onDelete={onDelete} />
+      <Header title="My Todo List" searchBar={false} />
+
+      <div className="container my-4">
+        <AddTodo addTodo={addTodo} />
+        <Todos todos={todos} onDelete={onDelete} />
+      </div>
+
       <Footer />
     </>
   );
